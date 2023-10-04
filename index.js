@@ -2,8 +2,14 @@
 
 function hideEverything(){
     document.getElementById("wdMap").style.display = "none";
+    document.getElementById("main").style.display = "none";
     document.getElementById("cMap").style.display = "none";
     document.getElementById("npcList").style.display = "none";
+}
+function showMain(){
+    hideEverything();
+    document.getElementById("main").style.display = "block"
+    document.querySelector(".navbar-collapse").classList.remove("show");
 }
 function showMapW(){
     hideEverything();
