@@ -2,11 +2,17 @@
 
 function hideEverything(){
     document.getElementById("wdMap").style.display = "none";
+    document.getElementById("cMap").style.display = "none";
     document.getElementById("npcList").style.display = "none";
 }
-function showMap(){
+function showMapW(){
     hideEverything();
     document.getElementById("wdMap").style.display = "block"
+    document.querySelector(".navbar-collapse").classList.remove("show");
+}
+function showMapC(){
+    hideEverything();
+    document.getElementById("cMap").style.display = "block"
     document.querySelector(".navbar-collapse").classList.remove("show");
 }
 function showNpc(){
