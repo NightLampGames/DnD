@@ -1,17 +1,23 @@
 
 
-
-for (var i=0; i < 7; i++){
-
-    document.querySelectorAll(".drum")[i].addEventListener("click",function (){
-        this.classList.toggle("pressed");
-        this.classList.toggle("pressed");
-        console.log(this);
-        var buttonHTML = this.innerHTML;
-        makeSound(buttonHTML);
-        buttonAnimation(buttonHTML);
-    });
+function hideEverything(){
+    document.getElementById("wdMap").style.display = "none";
+    document.getElementById("npcList").style.display = "none";
 }
+function showMap(){
+    hideEverything();
+    document.getElementById("wdMap").style.display = "block"
+    document.querySelector(".navbar-collapse").classList.remove("show");
+}
+function showNpc(){
+   hideEverything(); 
+    document.getElementById("npcList").style.display = "block";
+    document.querySelector(".navbar-collapse").classList.remove("show");
+   
+}
+addEventListener("click",function(event){
+    console.log()
+})
 addEventListener("keydown",function(event){
     makeSound(event.key);
     buttonAnimation(event.key);
