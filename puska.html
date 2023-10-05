@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <title>HWL DnD</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Monsieur La Doulaise" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+  .h1 ,.h2,h3,h4{
+    font-family: "Macondo";
+    font-size: 2rem;
+  }
+</style>
+<body>
+  <div class="container mt-4"> <h3>Puska</h3>
+    
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" id="m" onclick="showTab('movement')" href="#">Mozgás</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="a" onclick="showTab('action')" href="#">Akció</a>
+      </li>
+      <li class="nav-item disabled">
+        <a class="nav-link" id="e" onclick="showTab('else')" href="#">Egyéb</a>
+      </li>
+    </ul>
+    <div id="current"></div>
+    <div class="tabs " id="movement">
+      <ol class="list-group ">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Álltalános</div>
+            Nem muszály mozognod<br>Akcióval felbontható
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Séta/Futás/Szökdelés</div>
+            Eléggé egyértelmű
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 5f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Mászás</div>
+            Fel kell másznod, vagy épp lemászni egy kötéllel a mélységbe?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Kúszás</div>
+            Át kell kúsznos egy alagúton?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Úszás</div>
+            Nincs híd?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Ugrás</div>
+            Át kell ugranod a csapdát?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Esés</div>
+            Talán szándékosan csinálod, vagy éppen leszédültél valahonnan?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 0f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Feltápászkodás</div>
+            Ha kiütnek, mindig kelj fel. Hacsak nem egy vörös sárkánnyal kerültél szembe. Akkor lehet jobb, ha halottnak tetteted magad. 
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 1/2tm</span>
+        </li>
+      </ol>
+    </div>
+    <div class="tabs" id="action"style="display:none">
+      <ol class="list-group ">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Álltalános</div>
+            Nem muszály csinálnod semmit<br>Ha több akciód is lehet, mozoghatsz köztük</div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Támadás</div>
+            Suhints azzal a kardal, lődd el az a nyilat. Miért is ne?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 5f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Varázslás</div>
+            Persze. Castolj egy fireballt egy 10x10-es szobában. Mi baj történhet?
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Dash</div>
+            Amikor nem elég az alap mozgásod. 2x annyit tudsz mozogni.
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Disangage</div>
+            Nem akarod, hogy az ellenség megtámadjon, miközben elhaladsz mellettük?
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Dodge</div>
+            Szóval védekezel. Adv dex chekkekre, az ellenségnek dis minden attack-ra
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Grapple</div>
+            Ha az ellenséged nem nagyobb mint te, és kartávolságra van, akkor lefoghatod.<br>
+            Athetics check vs Athletics/Acrobatics check<br>
+            Egy lefogott lénynek 0-s speedje van
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f!</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Segítség</div>
+            Egyik csapattársad kicsit meg van szorulva és kartávolságra van?<br>
+            Kövi attack roll/bármi más roll/ előnyből megy. 
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f!</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Rejtőzés</div>
+            Szóval rejtőzködsz. Dobj egy Stealth chekket.<br>
+            Ellenfélnek Perception-t kell dobnia.
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Felkészülés</div>
+            Vársz. Megmondod, pontosan mire, mit fog reagálni a karaktered.<br>
+            Bármi lehet egy trigger, amit észlelsz.
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Keresés</div>
+            Dobj egy Wisdom/Intelligence chekket.
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Meglökés</div>
+            Közel az ellenfél egy szakadékhoz, és karnyujtásnyira van? Csak egy kis lökés kell neki.<br>
+            Athetics check vs Athletics/Acrobatics check
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f!</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Eszközhasználat</div>
+            Kard elővétele? -ingyen van<br>
+            Potion megivása? - action<br>
+            Ajtó kinyitás - ingyen van<br>
+            Valakit fejbe akarsz dobni egy korsóval? - action<br>
+            Épp egy TPK van készülőben, ezért pánikba estél? - teljesen ingyen van
+          </div>
+          
+        </li>
+      </ol>
+    </div>
+    <div class="tabs" id="else" style="display:none">
+      <ol class="list-group ">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Álltalános</div>
+            Nem muszály mozognod<br>Akcióval felbontható
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Séta/Futás/Szökdelés</div>
+            Eléggé egyértelmű
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 5f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Mászás</div>
+            Fel kell másznod, vagy épp lemászni egy kötéllel a mélységbe?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Kúszás</div>
+            Át kell kúsznos egy alagúton?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Úszás</div>
+            Nincs híd?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Ugrás</div>
+            Át kell ugranod a csapdát?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Esés</div>
+            Talán szándékosan csinálod, vagy éppen leszédültél valahonnan?
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 0f</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Feltápászkodás</div>
+            Ha kiütnek, mindig kelj fel. Hacsak nem egy vörös sárkánnyal kerültél szembe. Akkor lehet jobb, ha halottnak tetteted magad. 
+          </div>
+          <span class="badge bg-secondary rounded-pill">5f = 1/2tm</span>
+        </li>
+      </ol>
+    </div>
+  
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+
+</html>
