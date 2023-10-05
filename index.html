@@ -11,20 +11,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-  .navbar-brand {
+  .navbar-brand ,.nav-link, .dropdown-item{
     font-family: "Macondo";
+  }
+  .navbar-brand{
+    font-size: 2rem;
   }
   .nav-link{
-    font-family: "Macondo";
+    font-size: 2rem;
   }
-  .h1{
-    font-family: "Macondo";
-  }
-  .h2{
-    font-family: "Macondo";
-  }
-  .h4{
-    font-family: "Macondo";
+  .dropdown-item{
+    font-size: 1.5rem;
   }
 
 </style>
@@ -32,27 +29,29 @@
   <section id="menu">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" onclick="showMain()" href="./index.html"><img src="./images/icons/dragon-white.svg" height="30px"> Home</a>
+        <a class="navbar-brand" onclick="showMain()" href="./index.html"><img src="./images/icons/dragon-white.svg" height="40px"> Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item" >
-              <a class="nav-link active" onclick="showNpc()" href="#">Személyek</a>
+              <a class="nav-link active" onclick="showNpc()" href="#"><img src="./images/icons/npcIcon.svg" height="30px"> Személyek</a>
             </li>
             <li class="nav-item" >
-              <a class="nav-link active" onclick="showCards()" href="#">Varázstárgyak</a>
+              <a class="nav-link active" onclick="showCards()" href="#"><img src="./images/icons/heartIcon.svg" height="30px"> Varázstárgyak</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Térképek
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="./images/icons/mapIcon.svg" height="20px"> Térképek
               </a>
               <ul class="dropdown-menu">                
                 <li><a class="dropdown-item" onclick="showMapW()"href="#">Waterdeep</a></li>
                 <li><a class="dropdown-item" onclick="showMapC()" href="#">Casselanter</a></li>
                 
               </ul>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link active" onclick="showSheet()" href="#"><img src="./images/icons/puskaIcon.svg" height="30px"> Puska</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" aria-disabled="true">Titkok</a>
