@@ -6,15 +6,32 @@ function hideEverything(){
     document.getElementById("cMap").style.display = "none";
     document.getElementById("npcList").style.display = "none";
     document.getElementById("cards").style.display = "none";
+    document.getElementById("puska").style.display = "none";
+    document.getElementById("perception").style.display = "none";
 }
 function showMain(){
     hideEverything();
     document.getElementById("main").style.display = "block"
     document.querySelector(".navbar-collapse").classList.remove("show");
 }
+function showMemes(){
+    hideEverything();
+    document.getElementById("perception").style.display = "block"
+    document.getElementById("perception").src = src="https://www.youtube.com/embed/ZjlYFWLUDBQ?si=w5U1Lg7lNcQUJIh7&amp;controls=0&amp;autoplay=1"
+    document.querySelector(".navbar-collapse").classList.remove("show");
+    setTimeout(function (){
+        document.getElementById("perception").src = src="https://www.youtube.com/embed/ZjlYFWLUDBQ?si=w5U1Lg7lNcQUJIh7&amp;controls=0&amp;autoplay=0";
+        showMain();
+    },111000);
+}
 function showCards(){
     hideEverything();
     document.getElementById("cards").style.display = "block"
+    document.querySelector(".navbar-collapse").classList.remove("show");
+}
+function showPuska(){
+    hideEverything();
+    document.getElementById("puska").style.display = "block"
     document.querySelector(".navbar-collapse").classList.remove("show");
 }
 function showMapW(){
