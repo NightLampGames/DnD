@@ -7,14 +7,28 @@
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Monsieur La Doulaise" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Slab" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
   .h1 ,.h2,h3,h4{
-    font-family: "Macondo";
+    font-family: "Roboto Slab semibold";
     font-size: 2rem;
   }
+  .fw-bold, .nav-link{
+    font-family: "Roboto Slab semibold";
+    color:aliceblue
+    
+  }
+  .nav-link{
+    color: darkgray;
+  }
+  .me-auto{
+    font-family: Roboto Slap thin;
+    color: lightgrey
+    
+  }
+  
 </style>
 <body>
   <div class="container mt-4"> <h3>Puska</h3>
@@ -25,6 +39,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" id="a" onclick="showTab('action')" href="#">Akció</a>
+      </li>
+      <li class="nav-item disabled">
+        <a class="nav-link" id="c" onclick="showTab('conditions')" href="#">Állapotok</a>
       </li>
       <li class="nav-item disabled">
         <a class="nav-link" id="e" onclick="showTab('else')" href="#">Egyéb</a>
@@ -192,23 +209,156 @@
         </li>
       </ol>
     </div>
+    <div class="tabs" id="conditions"style="display:none">
+      <ol class="list-group ">
+        
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto ">
+            <div class="fw-bold" >Elvakított(Blinded)</div>
+            Minden ability check, amit látni kell, az autó fail<br>
+            Minden támadás a lény ellen előnyből megy, a lénynek minden támadása hátrányból megy
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Megbabonázott(Charmed)</div>
+            A megbabozázott nem tudja támadni azt, aki megbabonázta.<br>
+            Babonázónak előnye van a lényre.
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Megsüketített(Deafened)</div>
+            Minden ability check, amit hallani kell, az autó fail<br>
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Rémült(Frightened)</div>
+            Disadv minden rollra, ameddig a félelmet okozó tárgy látótávolságban van<br>
+            A lény nem tud saját akaratából közelebb kerülni a tárgyhoz.
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Lefogott(Grappled)</div>
+            A lefogott sebessége 0 <br>
+            Az állapot véget ér, ha a lefogó az tehetetlen, vagy elengedi<br>
+            Az állapot akkor is véget ér, ha valamilyen külső tényező eltávolítja a lefogó kezéből
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Tehetetlen(Incapacitated)</div>
+              Nem tud akciót vagy reakciót végrehajtani.
+
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Láthatatlan(Invisible)</div>
+            Előnyből dobsz, és mindenki hátrányból dog veled szemben.
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Lebénult(Paralyzed)</div>
+           Tehetetlen, és nem tud mozogni illetve beszélni.<br>
+           Minden Strength és Dexterity save auto fail<br>
+           Előnyból jönnek rá a támadások<br>
+           Minden támadás kritikus, ami 5ft-en belülről érkezik rá.
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Megkövült(Petrified)</div>
+            Minden érvényes rá, ami a bénultra<br>
+            resistens minden támadásra
+          </div>
+ 
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Mérgezett(Poisoned)</div>
+            Disadv attack rollra és ability check-re
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Összeesett(Prone)</div>
+            Csak kúszni tud, amíg fel nem tápászkodik<br>
+            Disadv attack roll<br>
+            5ft-en belül az ellenfélnek adv van attack rollra, 5ft-en kívűl viszont disadv
+
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Lekötözött(Restrained)</div>
+            A lefogott sebessége 0 <br>
+            Attack roll a lényre előnyből mennek<br>
+            A lény attack rolljai azok hátrányból mennek<br>
+            Disadv Dexterity save-re<br>
+            </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Lesokkolt(Stunned)</div>
+            Tehetetlen, és nem tud mozogni illetve beszélni is csak motyogva<br>
+            Minden Strength és Dexterity save auto fail<br>
+            Előnyból jönnek rá a támadások<br>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Ájult(Unconscious)</div>
+            Tehetetlen, és nem tud mozogni és beszélni, nem tud a környezetéről<br>
+            El dob mindent, és összeesik<br>
+            Minden Strength és Dexterity save auto fail<br>
+           Előnyból jönnek rá a támadások<br>
+           Minden támadás kritikus, ami 5ft-en belülről érkezik rá.
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Exhaustion</div>
+            1 - Disadv ability check<br>
+            2 - Felezett movement<br>
+            3 - Disadv attack és saving rollra<br>
+            4 - Felezett max hp<br>
+            5 - 0 a sebesség<br>
+            6 - halál<br>
+            Long rest-el eggyel csökken
+          </div>
+          
+        </li>
+      </ol>
+    </div>
     <div class="tabs" id="else" style="display:none">
       <ol class="list-group ">
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
-            <div class="fw-bold">Álltalános</div>
-            Nem muszály mozognod<br>Akcióval felbontható
+            <div class="fw-bold"> Akcióként bármilyen ability check használtahó</div>
           </div>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
-            <div class="fw-bold">Séta/Futás/Szökdelés</div>
-            Eléggé egyértelmű
+            <div class="fw-bold">Pajzs</div>
+            "+2 AC"
           </div>
-          <span class="badge bg-secondary rounded-pill">5f = 5f</span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
+          <div class="ms-2 me-auto ">
             <div class="fw-bold">Mászás</div>
             Fel kell másznod, vagy épp lemászni egy kötéllel a mélységbe?
           </div>

@@ -53,7 +53,7 @@ function showNpc(){
    
 }
 function showTab(tab){
-    for(let i=0; i<3;i++){
+    for(let i=0; i<4;i++){
         document.getElementsByClassName("nav-link")[i].classList.remove("active");
         document.getElementsByClassName("tabs")[i].style.display="none";
     }
@@ -67,7 +67,9 @@ function showTab(tab){
             case "else":
                 document.getElementById("e").classList.add("active");
                 break;
-            
+                case "conditions":
+                    document.getElementById("c").classList.add("active");
+                    break;
         default:
             document.getElementById("m").classList.add("active");
     }
