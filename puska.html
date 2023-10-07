@@ -12,11 +12,11 @@
 </head>
 <style>
   .h1 ,.h2,h3,h4{
-    font-family: "Roboto Slab semibold";
+    font-family: "Macondo";
     font-size: 2rem;
   }
   .fw-bold, .nav-link{
-    font-family: "Roboto Slab semibold";
+    font-family: "Macondo";
     color:aliceblue
     
   }
@@ -24,7 +24,7 @@
     color: darkgray;
   }
   .me-auto{
-    font-family: Roboto Slap thin;
+    font-family: "Macondo";
     color: lightgrey
     
   }
@@ -44,7 +44,7 @@
         <a class="nav-link" id="c" onclick="showTab('conditions')" href="#">Állapotok</a>
       </li>
       <li class="nav-item disabled">
-        <a class="nav-link" id="e" onclick="showTab('else')" href="#">Egyéb</a>
+        <a class="nav-link" id="e" onclick="showTab('else')" href="#">Jó tudni</a>
       </li>
     </ul>
     <div id="current"></div>
@@ -359,46 +359,34 @@
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto ">
-            <div class="fw-bold">Mászás</div>
-            Fel kell másznod, vagy épp lemászni egy kötéllel a mélységbe?
+            <div class="fw-bold">Kritikus találat</div>
+            Sikerült obni egy 20-ast?<br>
+            Minden attack-hoz használt kocka megduplázódik. 
           </div>
-          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
-            <div class="fw-bold">Kúszás</div>
-            Át kell kúsznos egy alagúton?
+            <div class="fw-bold">Rezisztens</div>
+            Ha egy adott sérülési típusra rezisztens vagy, akkor az feleződik
           </div>
-          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+          
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
-            <div class="fw-bold">Úszás</div>
-            Nincs híd?
+            <div class="fw-bold">Sebezhetőség</div>
+            Ha egy adott sérülési típusra sebezhető vagy, akkor az megduplázódik
           </div>
-          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
+          
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
-            <div class="fw-bold">Ugrás</div>
-            Át kell ugranod a csapdát?
+            <div class="fw-bold">Fedezék</div>
+            1/2 - +2 ac és dex save<br>
+            3/4 - +5 ac és dex save<br>
+            Full - Nem érheto támadás
           </div>
-          <span class="badge bg-secondary rounded-pill">5f = 10f</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
-            <div class="fw-bold">Esés</div>
-            Talán szándékosan csinálod, vagy éppen leszédültél valahonnan?
-          </div>
-          <span class="badge bg-secondary rounded-pill">5f = 0f</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
-            <div class="fw-bold">Feltápászkodás</div>
-            Ha kiütnek, mindig kelj fel. Hacsak nem egy vörös sárkánnyal kerültél szembe. Akkor lehet jobb, ha halottnak tetteted magad. 
-          </div>
-          <span class="badge bg-secondary rounded-pill">5f = 1/2tm</span>
-        </li>
+        
       </ol>
     </div>
   
